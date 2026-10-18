@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hanzi Lab</title>
+  <meta name="description" content="Aprende chino mandarín simplificado con oraciones de cultura general.">
+  <meta name="theme-color" content="#f5f7fb">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <script>
+    /* Aplica el tema guardado antes de pintar, para evitar un destello. */
+    try { var t = localStorage.getItem('hanziLab.tema'); if (t === 'claro' || t === 'oscuro') document.documentElement.dataset.tema = t; } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <button type="button" class="saltar" id="saltar">Saltar al contenido</button>
+
+  <header class="cabecera">
+    <a class="marca" href="#/inicio" aria-label="Hanzi Lab, inicio"><span class="sello" lang="zh-CN" aria-hidden="true">汉</span><span class="marca-txt">Hanzi Lab</span></a>
+    <div class="cab-acc">
+    <button type="button" class="estado-archivo" id="btnArchivo" hidden></button>
+    <button type="button" class="icono-btn" id="btnTema" aria-label="Cambiar tema">
+      <svg class="ico ico-sol" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="ico ico-luna" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></svg>
+    </button>
+    </div>
+  </header>
+
+  <div class="marco">
+    <nav id="nav" class="riel" aria-label="Secciones"></nav>
+    <main id="principal" tabindex="-1"></main>
+  </div>
+  <nav id="navInferior" class="barra-inferior" aria-label="Secciones principales"></nav>
+
+  <div id="avisos" class="avisos" aria-live="polite"></div>
+  <div id="capa"></div>
+  <noscript><p style="padding:2rem">Hanzi Lab necesita JavaScript para funcionar.</p></noscript>
+
+  <script src="js/datos/contenido.js"></script>
+  <script src="js/datos/vocabulario.js"></script>
+  <script src="js/datos/oraciones.js"></script>
+  <script src="js/nucleo.js"></script>
+  <script src="js/archivo.js"></script>
+  <script src="js/vistas/inicio.js"></script>
+  <script src="js/vistas/leer.js"></script>
+  <script src="js/vistas/tarjetas.js"></script>
+  <script src="js/vistas/practicar.js"></script>
+  <script src="js/vistas/escribir.js"></script>
+  <script src="js/vistas/diccionario.js"></script>
+  <script src="js/vistas/progreso.js"></script>
+  <script src="js/vistas/ajustes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
